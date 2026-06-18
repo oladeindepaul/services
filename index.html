@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Services Paul Oladeinde. Executive Virtual Assistant services built around your needs." />
+  <title>Services Paul Oladeinde</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#0F0F0F;--black-soft:#1A1A1A;--black-card:#222222;
+  --grey-dark:#3A3A3A;--grey-mid:#6B6B6B;--grey-light:#ADADAD;
+  --grey-line:#E2E2E2;--white:#F8F5F0;--white-pure:#FFFFFF;
+  --green:#3A9E5F;--green-pale:#EAF5EE;
+  --bg:#F8F5F0;--bg-alt:#F2EEE8;--surface:#FFFFFF;
+  --fg:#0F0F0F;--fg-soft:#3A3A3A;--fg-muted:#6B6B6B;
+  --bd:#E2E2E2;--nav-bg:rgba(248,245,240,0.94);
+  --font-display:'Fraunces',serif;
+  --font-body:'Inter',sans-serif;
+  --radius-sm:8px;--radius-md:12px;--radius-lg:20px;--radius-full:100px;
+  --shadow-sm:0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md:0 8px 32px rgba(0,0,0,0.10);
+  --shadow-lg:0 24px 64px rgba(0,0,0,0.14);
+  --transition:0.3s ease;
+}
+[data-theme="dark"] {
+  --bg:#0F0F0F;--bg-alt:#1A1A1A;--surface:#222222;
+  --fg:#F8F5F0;--fg-soft:#ADADAD;--fg-muted:#6B6B6B;
+  --bd:#2A2A2A;--nav-bg:rgba(15,15,15,0.94);
+  --shadow-sm:0 2px 12px rgba(0,0,0,0.3);
+  --shadow-md:0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg:0 24px 64px rgba(0,0,0,0.5);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--fg);line-height:1.6;transition:background 0.5s,color 0.5s;overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+
+/* ── NAVBAR ── */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--nav-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);transition:background 0.5s,border-color 0.5s;}
+.navbar-inner{max-width:1200px;margin:0 auto;padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.navbar-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.navbar-logo-mark{width:36px;height:36px;border-radius:50%;background:var(--black);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;border:1px solid var(--bd);}
+[data-theme="dark"] .navbar-logo-mark{background:#222;border-color:#3A3A3A;}
+.logo-p{font-family:var(--font-display);font-size:1rem;color:var(--white);position:absolute;left:7px;top:50%;transform:translateY(-52%);}
+.logo-o{font-family:var(--font-display);font-size:1rem;font-style:italic;color:var(--green);position:absolute;right:5px;top:50%;transform:translateY(-52%);}
+.navbar-links{display:flex;align-items:center;gap:36px;}
+.navbar-links a{font-size:0.82rem;font-weight:400;color:var(--fg-muted);letter-spacing:0.04em;transition:color 0.2s;position:relative;}
+.navbar-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--green);transform:scaleX(0);transition:transform 0.3s;}
+.navbar-links a:hover{color:var(--fg);}
+.navbar-links a:hover::after,.navbar-links a.active::after{transform:scaleX(1);}
+.navbar-links a.active{color:var(--fg);}
+.navbar-right{display:flex;align-items:center;gap:16px;}
+.theme-toggle{width:44px;height:24px;border-radius:100px;background:var(--bd);border:1.5px solid var(--bd);cursor:pointer;position:relative;transition:background 0.3s;flex-shrink:0;display:flex;align-items:center;padding:2px;}
+[data-theme="dark"] .theme-toggle{background:var(--green);border-color:var(--green);}
+.theme-toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;transition:transform 0.3s;font-size:0.55rem;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.2);}
+[data-theme="dark"] .theme-toggle-thumb{transform:translateX(20px);}
+.navbar-cta{background:var(--black);color:var(--white);padding:10px 22px;border-radius:100px;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;border:none;cursor:pointer;transition:background 0.2s,transform 0.2s;display:flex;align-items:center;gap:6px;font-family:var(--font-body);}
+.navbar-cta:hover{background:var(--green);transform:translateY(-1px);}
+[data-theme="dark"] .navbar-cta{background:var(--white);color:var(--black);}
+[data-theme="dark"] .navbar-cta:hover{background:var(--green);color:var(--white);}
+.navbar-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.navbar-hamburger span{width:22px;height:1.5px;background:var(--fg);border-radius:2px;display:block;}
+.navbar-mobile{display:none;flex-direction:column;padding:20px 40px 24px;border-top:1px solid var(--bd);background:var(--nav-bg);backdrop-filter:blur(14px);gap:18px;}
+.navbar-mobile.open{display:flex;}
+.navbar-mobile a{font-size:0.9rem;color:var(--fg-muted);}
+
+/* ── PAGE HERO ── */
+.page-hero {
+  padding: 140px 40px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--bd);
+}
+.page-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 20px;
+  display: block;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.06;
+  color: var(--fg);
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+.page-title em { font-style:italic; color:var(--green); }
+.page-desc {
+  font-size: 1rem;
+  color: var(--fg-soft);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 560px;
+}
+
+/* ── SERVICE BLOCK ── */
+.service-block {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+  border-bottom: 1px solid var(--bd);
+}
+.service-block:last-of-type { border-bottom: none; }
+
+/* Left column */
+.service-left { position: sticky; top: 100px; }
+.service-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--bd);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+}
+.service-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--fg);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.3s;
+}
+[data-theme="dark"] .service-icon svg { stroke: var(--white); }
+.service-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+.service-name em { font-style:italic; color:var(--green); display:block; }
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s, gap 0.2s;
+}
+.service-cta svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+.service-cta:hover { color: var(--green); gap: 12px; }
+.service-cta:hover svg { transform: translate(2px, -2px); }
+
+/* Right column */
+.service-right {}
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--fg-soft);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+.service-included-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 18px;
+  display: block;
+}
+.service-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--bd);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  color: var(--fg-soft);
+  font-weight: 300;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.checklist-item:hover {
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+.checklist-check {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checklist-check svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--green);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── PROCESS SECTION ── */
+.process-wrap {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+}
+[data-theme="dark"] .process-wrap { background: var(--bg-alt); }
+.process-section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+.process-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+  display: block;
+}
+.process-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  font-weight: 400;
+  color: var(--fg);
+  margin-bottom: 56px;
+  line-height: 1.12;
+}
+.process-title em { font-style:italic; color:var(--green); }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.process-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  border: 1px solid var(--bd);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.process-card:hover {
+  border-color: var(--black);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+[data-theme="dark"] .process-card:hover { border-color: var(--white); }
+.process-card-number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--bd);
+  line-height: 1;
+  margin-bottom: 24px;
+  display: block;
+}
+[data-theme="dark"] .process-card-number { color: #3A3A3A; }
+.process-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--fg);
+  margin-bottom: 12px;
+}
+.process-card-desc {
+  font-size: 0.85rem;
+  color: var(--fg-soft);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--black);
+  padding: 100px 40px;
+  text-align: center;
+}
+[data-theme="dark"] .cta-banner { background: var(--bg-alt); border-top: 1px solid var(--bd); }
+.cta-inner { max-width: 640px; margin: 0 auto; }
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+[data-theme="dark"] .cta-title { color: var(--fg); }
+.cta-title em { font-style:italic; color:var(--green); }
+.cta-sub {
+  font-size: 0.95rem;
+  color: rgba(248,245,240,0.5);
+  line-height: 1.8;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+[data-theme="dark"] .cta-sub { color: var(--fg-muted); }
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  color: var(--black);
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-cta:hover { background:var(--green);color:var(--white);transform:translateY(-2px);box-shadow:0 12px 32px rgba(58,158,95,0.3); }
+[data-theme="dark"] .btn-cta { background:var(--green);color:var(--white); }
+
+/* ── FOOTER ── */
+.footer{background:var(--black);padding:28px 40px;border-top:1px solid #1A1A1A;}
+[data-theme="dark"] .footer{background:#070F0A;border-top:1px solid #111;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.footer-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.footer-logo-mark{width:32px;height:32px;border-radius:50%;background:#222;border:1px solid #2A2A2A;display:flex;align-items:center;justify-content:center;position:relative;}
+.footer-logo-mark .logo-p{font-family:var(--font-display);font-size:0.9rem;color:var(--white);position:absolute;left:5px;top:50%;transform:translateY(-52%);}
+.footer-logo-mark .logo-o{font-family:var(--font-display);font-size:0.9rem;font-style:italic;color:var(--green);position:absolute;right:4px;top:50%;transform:translateY(-52%);}
+.footer-copy{font-size:0.78rem;color:rgba(248,245,240,0.3);letter-spacing:0.04em;text-align:center;flex:1;}
+.footer-socials{display:flex;align-items:center;gap:18px;flex-shrink:0;}
+.footer-social-link{width:34px;height:34px;border-radius:50%;border:1px solid #2A2A2A;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,background 0.2s,transform 0.2s;}
+.footer-social-link:hover{border-color:var(--green);background:rgba(58,158,95,0.08);transform:translateY(-2px);}
+.footer-social-link svg{width:15px;height:15px;fill:rgba(248,245,240,0.4);transition:fill 0.2s;}
+.footer-social-link:hover svg{fill:var(--green);}
+
+/* ── FADE UP ── */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .service-block { grid-template-columns:1fr;gap:48px; }
+  .service-left { position:static; }
+  .process-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:900px){
+  .navbar-links{display:none;}
+  .navbar-hamburger{display:flex;}
+  .navbar-inner{padding:0 20px;}
+  .navbar-mobile{padding:20px 20px 24px;}
+  .page-hero{padding:110px 20px 70px;}
+  .service-block{padding:60px 20px;}
+  .process-section{padding:70px 20px;}
+  .service-checklist{grid-template-columns:1fr;}
+  .cta-banner{padding:70px 20px;}
+  .footer{padding:24px 20px;}
+  .footer-inner{flex-wrap:wrap;justify-content:center;gap:16px;}
+  .footer-copy{order:3;flex:100%;text-align:center;}
+}
+@media(max-width:600px){
+  .process-grid{grid-template-columns:1fr;}
+  .page-title{font-size:2.4rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-logo">
+      <div class="navbar-logo-mark">
+        <span class="logo-p">P</span>
+        <span class="logo-o">O</span>
+      </div>
+    </a>
+    <ul class="navbar-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+    </ul>
+    <div class="navbar-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle-thumb">☀</span>
+      </button>
+      <a href="hire.html" class="navbar-cta">
+        Hire Me
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="navbar-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="navbar-mobile" id="mobileMenu">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="services.html">Services</a>
+    <a href="hire.html" class="navbar-cta">Hire Me</a>
+  </div>
+</nav>
+
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="page-eyebrow">What I Offer</span>
+  <h1 class="page-title">Services built around <em>your needs</em></h1>
+  <p class="page-desc">Every service I offer is rooted in real experience. No fluff, no guesswork just clear, dependable support that moves your business forward.</p>
+</div>
+
+
+<!-- SERVICE 01 EXECUTIVE ASSISTANT -->
+<div class="service-block">
+  <div class="service-left">
+    <div class="service-number">01</div>
+    <div class="service-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </div>
+    <h2 class="service-name">Executive Assistant <em>Support</em></h2>
+    <a href="hire.html" class="service-cta">
+      Get Started
+      <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="service-right fade-up">
+    <p class="service-desc">The core of what I do. I handle the operational layer of your day so you can focus on high level decisions and growth. Whether it is managing your calendar, keeping your inbox clean, coordinating travel, or preparing you for every meeting I make sure nothing slips through the cracks. You lead. I manage everything behind it.</p>
+    <span class="service-included-label">What is Included</span>
+    <div class="service-checklist">
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Calendar management and scheduling</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Inbox management and email triage</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Travel planning and coordination</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Meeting preparation and follow up</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Stakeholder communication</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Task tracking and reminders</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Document preparation</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>General administrative support</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SERVICE 02 OPERATIONS & SYSTEMS -->
+<div class="service-block">
+  <div class="service-left">
+    <div class="service-number">02</div>
+    <div class="service-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+    </div>
+    <h2 class="service-name">Operations and <em>Systems Building</em></h2>
+    <a href="hire.html" class="service-cta">
+      Get Started
+      <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="service-right fade-up">
+    <p class="service-desc">Most businesses run on chaos held together by habit. I come in and build the structure that makes growth sustainable. From Notion workspaces and Airtable databases to SOPs and team dashboards, I design systems that are clean, usable, and built to last so your team always knows where things live and how things work.</p>
+    <span class="service-included-label">What is Included</span>
+    <div class="service-checklist">
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Notion workspace design and build</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Airtable CRM and database setup</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>SOP documentation and templates</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Team operations hubs</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Project tracking systems</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Founder and executive dashboards</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Onboarding system design</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Process mapping and documentation</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SERVICE 03 WORKFLOW AUTOMATION -->
+<div class="service-block">
+  <div class="service-left">
+    <div class="service-number">03</div>
+    <div class="service-icon">
+      <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    </div>
+    <h2 class="service-name">Workflow <em>Automation</em></h2>
+    <a href="hire.html" class="service-cta">
+      Get Started
+      <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="service-right fade-up">
+    <p class="service-desc">Manual, repetitive tasks are a drain on time and attention. I identify the workflows that can be automated and build the systems that run them without human input. Whether it is a lead capture flow, a booking confirmation, or an internal notification system, I connect your tools and let them do the heavy lifting.</p>
+    <span class="service-included-label">What is Included</span>
+    <div class="service-checklist">
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Zapier workflow design and setup</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Lead capture and routing automation</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Booking and enquiry automation</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Form to CRM integrations</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Notification and reminder systems</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>ManyChat conversation flows</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Multi step workflow builds</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Tool connection and integration</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SERVICE 04 RESEARCH & DATA -->
+<div class="service-block">
+  <div class="service-left">
+    <div class="service-number">04</div>
+    <div class="service-icon">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </div>
+    <h2 class="service-name">Research and <em>Data Management</em></h2>
+    <a href="hire.html" class="service-cta">
+      Get Started
+      <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="service-right fade-up">
+    <p class="service-desc">Good decisions are built on good information. I conduct structured business research, produce clear strategic reports, and handle data at every stage from cleaning and structuring raw datasets to accurate data entry and analysis ready outputs. You get the information you need, organised the way you need it.</p>
+    <span class="service-included-label">What is Included</span>
+    <div class="service-checklist">
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Market and competitor research</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Strategic business reports</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Data cleaning and structuring</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Accurate data entry</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Dataset organisation and formatting</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Research synthesis and summaries</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Industry and trend analysis</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Fact finding and due diligence</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SERVICE 05 EMAIL MARKETING -->
+<div class="service-block">
+  <div class="service-left">
+    <div class="service-number">05</div>
+    <div class="service-icon">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </div>
+    <h2 class="service-name">Email Marketing and <em>Communication</em></h2>
+    <a href="hire.html" class="service-cta">
+      Get Started
+      <svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="service-right fade-up">
+    <p class="service-desc">Email done right is one of the highest return activities a business can invest in. I build email sequences and campaigns that nurture leads, retain clients, and drive action from welcome flows and drip sequences to HTML templates and automated reminders. I also manage ongoing correspondence so your communication stays professional and consistent.</p>
+    <span class="service-included-label">What is Included</span>
+    <div class="service-checklist">
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Email sequence design and writing</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Campaign setup in MailerLite or Mailchimp</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>HTML email template creation</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Lead nurture and drip sequences</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Automated reminder systems</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Inbox and correspondence management</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Follow up systems and scheduling</div>
+      <div class="checklist-item"><span class="checklist-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></span>Email list organisation and tagging</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- PROCESS SECTION -->
+<div class="process-wrap">
+  <div class="process-section">
+    <span class="process-eyebrow">How It Works</span>
+    <h2 class="process-title">My Working <em>Process</em></h2>
+    <div class="process-grid">
+      <div class="process-card fade-up">
+        <span class="process-card-number">01</span>
+        <div class="process-card-title">Discovery</div>
+        <p class="process-card-desc">We start with a conversation. I learn about your business, your challenges, and exactly what you need so I can come in prepared and focused.</p>
+      </div>
+      <div class="process-card fade-up">
+        <span class="process-card-number">02</span>
+        <div class="process-card-title">Planning</div>
+        <p class="process-card-desc">I map out exactly what will be built or handled, agree on timelines, and make sure we are aligned before any work begins.</p>
+      </div>
+      <div class="process-card fade-up">
+        <span class="process-card-number">03</span>
+        <div class="process-card-title">Execution</div>
+        <p class="process-card-desc">I get to work. Updates are shared as things progress. No chasing, no silence just consistent, quality delivery on what was agreed.</p>
+      </div>
+      <div class="process-card fade-up">
+        <span class="process-card-number">04</span>
+        <div class="process-card-title">Handover</div>
+        <p class="process-card-desc">Everything is handed over clean, documented, and ready to use. If ongoing support is needed, we discuss what that looks like.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to get <em>started?</em></h2>
+    <p class="cta-sub">Tell me what you need and let us figure out how I can help. No long forms, no pressure just a conversation.</p>
+    <a href="hire.html" class="btn-cta">
+      Hire Me
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-logo-mark">
+        <span class="logo-p">P</span>
+        <span class="logo-o">O</span>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 Paul Oladeinde. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/pauloladeinde" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://x.com/A_Oladeinde19" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.threads.com/@pauloladeinde_" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Threads">
+        <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.366-.89h-.029c-.78 0-1.652.233-2.205.896l-1.595-1.325c.847-1.021 2.138-1.584 3.8-1.584h.039c3.016.025 4.815 1.79 5.028 4.919.14.002.278.006.416.012 1.242.057 2.316.409 3.192 1.047 1.12.807 1.875 2.018 2.25 3.603.585 2.475.114 5.006-1.285 6.56C19.218 23.266 16.94 23.98 12.186 24z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ── THEME TOGGLE ──
+(function(){
+  const html=document.documentElement;
+  const toggle=document.getElementById('themeToggle');
+  const thumb=toggle.querySelector('.theme-toggle-thumb');
+  const saved=localStorage.getItem('po-theme')||'light';
+  html.setAttribute('data-theme',saved);
+  thumb.textContent=saved==='dark'?'🌙':'☀';
+  toggle.addEventListener('click',()=>{
+    const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+    html.setAttribute('data-theme',next);
+    thumb.textContent=next==='dark'?'🌙':'☀';
+    localStorage.setItem('po-theme',next);
+  });
+})();
+
+// ── MOBILE MENU ──
+(function(){
+  const btn=document.getElementById('hamburger');
+  const menu=document.getElementById('mobileMenu');
+  if(btn&&menu) btn.addEventListener('click',()=>menu.classList.toggle('open'));
+})();
+
+// ── FADE UP ──
+(function(){
+  const els=document.querySelectorAll('.fade-up');
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('visible'),i*70);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1});
+  els.forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html> 
